@@ -1,9 +1,9 @@
 "use client";
 
 import { trustItems, stats, mosaicImages } from "./data";
-import type { TrustItem, Stat, MosaicImage } from "./types";
+import type { TrustItem, Stat, MosaicImage, PageProps } from "./types";
 
-export default function Home() {
+export default function Home({ setPage }: PageProps) {
   return (
     <>
       <section className="relative min-h-[90vh] bg-[#0D2D5E] overflow-hidden flex items-center">
@@ -109,13 +109,22 @@ export default function Home() {
             peace of mind.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm">
+            <button
+              onClick={() => setPage("contact")}
+              className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm"
+            >
               Request a Free Quote
             </button>
-            <button className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D2D5E] transition-colors text-sm">
+            <button
+              onClick={() => setPage("contact")}
+              className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D2D5E] transition-colors text-sm"
+            >
               Book Consultation
             </button>
-            <button className="border-2 border-[#F59E0B] text-[#F59E0B] font-bold px-8 py-4 rounded-lg hover:bg-[#F59E0B] hover:text-white transition-colors text-sm">
+            <button
+              onClick={() => setPage("cyber")}
+              className="border-2 border-[#F59E0B] text-[#F59E0B] font-bold px-8 py-4 rounded-lg hover:bg-[#F59E0B] hover:text-white transition-colors text-sm"
+            >
               Free Cyber Score
             </button>
           </div>

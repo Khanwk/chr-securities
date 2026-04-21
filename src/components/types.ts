@@ -55,3 +55,31 @@ export interface FaqCategory {
 export interface PageProps {
     setPage: (page: string) => void;
 }
+export interface CyberService {
+    title: string;
+    bullets: string[];
+}
+
+export interface CyberPricingCard {
+    title: string;
+    price: string;
+    description: string;
+    cta: string;
+    ctaTarget: "modal-cyber" | "contact" | "modal-quote";
+}
+
+export interface CyberWhyItem {
+    heading: string;
+    body: string;
+}
+
+export interface CyberPartner {
+    name: string;
+    subtitle: string;
+    description: string;
+    tags: string[];
+}
+
+export interface ModalProps {
+    onClose: () => void;
+}

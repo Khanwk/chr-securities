@@ -9,6 +9,10 @@ import type {
     Credential,
     Product,
     FaqCategory,
+    CyberService,
+    CyberPricingCard,
+    CyberWhyItem,
+    CyberPartner,
 } from "./types";
 
 export const navLinks: NavLink[] = [
@@ -352,5 +356,115 @@ export const faqCategories: FaqCategory[] = [
                     "Click Free Quote in the navigation, use the Contact page, or call Ciaran directly on 087 909 6434.",
             },
         ],
+    },
+];
+
+export const cyberServices: CyberService[] = [
+    {
+        title: "Cyber Security Assessment",
+        bullets: [
+            "Full evaluation of current cyber security posture",
+            "Network and device vulnerability scan",
+            "Email and user access risk review",
+            "Internet-facing asset exposure check",
+            "Phishing and social engineering risk assessment",
+            "Clear risk report with priority actions",
+        ],
+    },
+    {
+        title: "Posture Audit & Misconfiguration Check",
+        bullets: [
+            "Review of systems for common misconfigurations",
+            "Firewall and network configuration review",
+            "Remote access and VPN security check",
+            "Password policy and multi-factor authentication assessment",
+            "Cloud storage and sharing permissions review",
+            "CCTV and alarm system network exposure check",
+        ],
+    },
+    {
+        title: "Microsoft 365 & Azure Security",
+        bullets: [
+            "Specialist review of Microsoft 365 and Azure environments",
+            "Microsoft 365 security baseline review",
+            "Azure Active Directory / Entra ID audit",
+            "Email security and anti-phishing configuration",
+            "Conditional access and MFA policies",
+            "SharePoint and OneDrive permission audit",
+        ],
+    },
+    {
+        title: "Compliance Baselining & Certification Readiness",
+        bullets: [
+            "Prepare your business for cyber compliance obligations",
+            "GDPR data security obligation review",
+            "ISO 27001 gap analysis",
+            "Cyber Essentials readiness assessment",
+            "NIS2 Directive applicability check (EU/Ireland)",
+            "Compliance roadmap and action plan",
+        ],
+    },
+];
+
+export const cyberPricing: CyberPricingCard[] = [
+    {
+        title: "Free Cyber Score",
+        price: "Free",
+        description:
+            "Instant cyber health check. See how exposed your business is in minutes — no commitment required.",
+        cta: "Get Yours Now",
+        ctaTarget: "modal-cyber",
+    },
+    {
+        title: "Cyber Consultation",
+        price: "From €650",
+        description:
+            "One-to-one cyber assessment with a detailed risk report and practical action plan for your business.",
+        cta: "Book Now",
+        ctaTarget: "contact",
+    },
+    {
+        title: "SMB Starter Package",
+        price: "Available",
+        description:
+            "Ongoing cyber monitoring, compliance support and advisory for Irish SMBs. Ask for a tailored package.",
+        cta: "Enquire",
+        ctaTarget: "modal-quote",
+    },
+];
+
+export const cyberWhyItems: CyberWhyItem[] = [
+    {
+        heading: "Your CCTV is on your network",
+        body: "An unsecured camera is a door into your business. Cyber security closes that door.",
+    },
+    {
+        heading: "Your alarm app is on your phone",
+        body: "If your device or email is compromised, so is your alarm system.",
+    },
+    {
+        heading: "GDPR is your legal responsibility",
+        body: "Irish businesses must protect customer data. A breach costs far more than prevention.",
+    },
+    {
+        heading: "Most Irish SMBs are unprotected",
+        body: "Over 60% of businesses hit by a cyber attack close within 6 months.",
+    },
+];
+
+export const cyberPartners: CyberPartner[] = [
+    {
+        name: "Apply Cyber",
+        subtitle: "Powered by Apply Cyber Platform",
+        description:
+            "Apply Cyber is the AI-powered platform behind CHR's cyber services — delivering cyber risk scoring, compliance monitoring, threat detection and automated security posture management for Irish businesses.",
+        tags: ["AI-Powered", "Cyber Risk Scoring", "Compliance", "Threat Detection"],
+    },
+    {
+        name: "Trust Vector",
+        subtitle: "Cyber & AI Partner — Ireland",
+        description:
+            "Trust Vector is CHR Securities' Irish cyber and AI partner — providing risk advisory, compliance support and threat intelligence tailored for the Irish and EU market.",
+        tags: ["Irish Partner", "EU Compliant", "Risk Advisory", "AI Services"],
     },
 ];

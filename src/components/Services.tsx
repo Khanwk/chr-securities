@@ -1,9 +1,14 @@
 "use client";
 
 import { serviceTiles, serviceDetails, testimonials } from "./data";
-import type { ServiceTile, ServiceDetail, Testimonial } from "./types";
+import type {
+  ServiceTile,
+  ServiceDetail,
+  Testimonial,
+  PageProps,
+} from "./types";
 
-export default function Services() {
+export default function Services({ setPage }: PageProps) {
   return (
     <>
       <section className="bg-white text-[#333333] py-16 px-6">
