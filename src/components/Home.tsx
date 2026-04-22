@@ -1,9 +1,13 @@
 "use client";
 
-import { trustItems, stats, mosaicImages } from "./data";
-import type { TrustItem, Stat, MosaicImage, PageProps } from "./types";
+import { useRouter } from "next/navigation";
+import { trustItems, stats, mosaicImages } from "../data";
+import type { TrustItem, Stat, MosaicImage } from "../types";
+import { useModal } from "@/context/ModalContext";
 
-export default function Home({ setPage }: PageProps) {
+export default function Home() {
+  const router = useRouter();
+  const { openQuote } = useModal();
   return (
     <>
       <section className="relative min-h-[90vh] bg-[#0D2D5E] overflow-hidden flex items-center">
@@ -38,10 +42,16 @@ export default function Home({ setPage }: PageProps) {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
-              <button className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm tracking-wide">
+              <button
+                onClick={() => openQuote()}
+                className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm tracking-wide"
+              >
                 Request a Quote
               </button>
-              <button className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D2D5E] transition-colors text-sm tracking-wide">
+              <button
+                onClick={() => router.push("/contact")}
+                className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D2D5E] transition-colors text-sm tracking-wide"
+              >
                 Book Consultation
               </button>
             </div>
@@ -110,19 +120,19 @@ export default function Home({ setPage }: PageProps) {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button
-              onClick={() => setPage("contact")}
+              onClick={() => router.push("/contact")}
               className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm"
             >
               Request a Free Quote
             </button>
             <button
-              onClick={() => setPage("contact")}
+              onClick={() => router.push("/contact")}
               className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D2D5E] transition-colors text-sm"
             >
               Book Consultation
             </button>
             <button
-              onClick={() => setPage("cyber")}
+              onClick={() => router.push("/cyber")}
               className="border-2 border-[#F59E0B] text-[#F59E0B] font-bold px-8 py-4 rounded-lg hover:bg-[#F59E0B] hover:text-white transition-colors text-sm"
             >
               Free Cyber Score

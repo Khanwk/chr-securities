@@ -52,9 +52,7 @@ export interface FaqCategory {
     tab: string;
     items: FaqItem[];
 }
-export interface PageProps {
-    setPage: (page: string) => void;
-}
+
 export interface CyberService {
     title: string;
     bullets: string[];
@@ -82,4 +80,29 @@ export interface CyberPartner {
 
 export interface ModalProps {
     onClose: () => void;
+}
+export interface TimeSlot {
+    time: string;
+    taken: boolean;
+}
+
+export interface CalendarDay {
+    day: string;
+    short: string;
+    slots: TimeSlot[];
+}
+
+export interface ContactForm {
+    firstName: string;
+    phone: string;
+    email: string;
+    propertyType: string;
+    service: string;
+    message: string;
+}
+export interface ServiceDetail {
+    title: string;
+    tag: string;
+    img: string;
+    bullets: string[];
 }

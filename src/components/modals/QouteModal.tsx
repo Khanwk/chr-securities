@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Modal from "../../ui/Modal";
-import type { ModalProps } from "../types";
+import type { ModalProps } from "../../types";
 
 const serviceOptions: string[] = [
   "CCTV Installation",
@@ -73,19 +73,19 @@ export default function QuoteModal({ onClose }: ModalProps) {
               placeholder="Your Name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-primary"
+              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-[#0D2D5E]"
             />
             <input
               type="tel"
               placeholder="Phone Number"
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-primary"
+              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-[#0D2D5E]"
             />
             <select
               value={form.service}
               onChange={(e) => setForm({ ...form, service: e.target.value })}
-              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-primary cursor-pointer"
+              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-[#0D2D5E] cursor-pointer"
             >
               <option value="">Select a service</option>
               {serviceOptions.map((s: string) => (
@@ -99,7 +99,7 @@ export default function QuoteModal({ onClose }: ModalProps) {
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               rows={3}
-              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-primary resize-none"
+              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-[#0D2D5E] resize-none"
             />
             <button
               onClick={handleSubmit}

@@ -13,6 +13,7 @@ import type {
     CyberPricingCard,
     CyberWhyItem,
     CyberPartner,
+    CalendarDay,
 } from "./types";
 
 export const navLinks: NavLink[] = [
@@ -39,7 +40,7 @@ export const stats: Stat[] = [
 
 export const mosaicImages: MosaicImage[] = [
     {
-        src: "https://images.unsplash.com/photo-1557597774-9d475d030a94?auto=format&fit=crop&w=600&q=80",
+        src: "https://images.pexels.com/photos/3205735/pexels-photo-3205735.jpeg?auto=compress&cs=tinysrgb&w=600",
         alt: "CCTV Camera",
     },
     {
@@ -56,12 +57,12 @@ export const serviceTiles: ServiceTile[] = [
     {
         title: "CCTV Installation",
         tag: "Hikvision",
-        img: "https://images.unsplash.com/photo-1581091215367-59ab6c8b7f50?auto=format&fit=crop&w=800&q=80",
+        img: "https://images.pexels.com/photos/3205735/pexels-photo-3205735.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
         title: "Intruder Alarms",
         tag: "HKC Smart",
-        img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1b1?auto=format&fit=crop&w=800&q=80",
+        img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=90",
     },
     {
         title: "Fire Alarms",
@@ -81,80 +82,106 @@ export const serviceTiles: ServiceTile[] = [
     {
         title: "Maintenance",
         tag: "Annual Cover",
-        img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+        img: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
 ];
 
 export const serviceDetails: ServiceDetail[] = [
     {
         title: "CCTV Systems",
+        tag: "Hikvision",
+        img: "https://images.pexels.com/photos/3205735/pexels-photo-3205735.jpeg?auto=compress&cs=tinysrgb&w=800",
         bullets: [
-            "24/7 surveillance protection",
-            "Free mobile app — view cameras anywhere in the world",
-            "HD IP cameras with analytics and night vision (Hikvision)",
-            "Supply, fit, wire, install, repair and upgrade",
-            "4, 8, 16, 32 or 64 camera configurations",
-            "24hr monitoring via Resure surveillance room",
-            "Private houses, commercial, domestic and industrial",
+            "Protects your premises 24 hours a day, 365 days a year with video surveillance",
+            "Free app provided — view cameras anytime, anywhere in the world",
+            "IP high-definition cameras with analytics and night vision (Hikvision)",
+            "We supply, fit, wire and install",
+            "Repair and upgrade of existing systems",
+            "Systems available in 4, 8, 16, 32 or 64 camera configurations depending on site",
+            "24hr monitoring option via Resure surveillance room — your premises watched when you're not there",
+            "Supply and fit to private houses, commercial, domestic and industrial premises",
         ],
     },
     {
         title: "Intruder Alarms",
+        tag: "HKC Smart",
+        img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=90",
         bullets: [
-            "Wired and wireless alarm systems",
-            "HKC smart app with 4G GSM and Wi-Fi backup",
-            "Contact, vibration and PIR beam sensors",
+            "Deters burglary — protects your premises and people",
+            "Supply and fit of wired and wireless alarm systems",
+            "Protection of windows and doors with contact and vibration sensors and internal PIR beams",
+            "HKC smart app with 4G GSM and Wi-Fi — remote access from anywhere",
             "24hr monitoring station connection",
             "Rapid Garda response via alarm control",
+            "Supply and fit to private houses, commercial, domestic and industrial premises",
             "Repair and upgrade of existing systems",
             "Maintenance contracts available",
         ],
     },
     {
         title: "Fire Alarm Systems",
+        tag: "Certified",
+        img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80",
         bullets: [
-            "Early fire detection — alerts people to respond quickly",
-            "Automatic fire brigade notification on activation",
-            "Smoke, heat and flame detectors",
-            "Audible and visual warnings for occupants",
+            "Detects fire early and alerts people so they can respond quickly",
+            "We install and maintain fire alarm systems",
+            "If alarm activates, the fire brigade is automatically notified via alarm control",
+            "Systems identify heat, smoke and flames using smoke and heat detectors",
+            "Audible warning (bells) and visual warning (flashing lights) to alert occupants",
             "Compliant with Irish Fire Safety Regulations",
             "Quarterly maintenance contracts available",
-            "Fire and emergency lighting inspection reports provided",
+            "Fire alarm system report provided for inspection, testing and servicing",
+            "Emergency lighting system report for inspection, testing and servicing",
+            "Supply and fit to private houses, commercial, domestic and industrial premises",
         ],
     },
     {
         title: "24/7 Monitoring",
+        tag: "Rapid Response",
+        img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
         bullets: [
-            "Professional monitoring via Resure",
-            "Covers intruder alarms, fire alarms and CCTV",
+            "24hr professional monitoring via Resure for CCTV and alarm control",
+            "Covers intruder alarms and fire alarms",
             "Rapid Garda response coordination",
-            "Automatic fire brigade notification",
-            "Private houses, commercial, domestic and industrial",
+            "Fire brigade notification on fire alarm activation",
+            "Monitoring for private houses, commercial, domestic and industrial premises",
         ],
     },
     {
         title: "Access Control",
+        tag: "ACT Systems",
+        img: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80",
         bullets: [
-            "Door entry for controlled area access",
-            "Standalone system for single-door entry",
+            "Door entry system to provide access to controlled areas",
+            "Provides secure entry to a building and restricts individual access",
+            "Standalone system available for single-door entry",
             "PC-based system for multi-door access control",
-            "Per-person, per-door, per-time access restrictions",
-            "Wide range of audio and video intercoms",
+            "Wide range of intercoms to suit every budget",
+            "Supply and fit to private houses, commercial, domestic and industrial premises",
             "Repair and upgrade of existing systems",
         ],
     },
     {
         title: "Maintenance Contracts",
+        tag: "Annual Cover",
+        img: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800",
         bullets: [
             "Annual and quarterly service contracts",
-            "Emergency repairs — 24hr call-out for contract clients",
+            "Emergency repairs",
+            "24hr call-out service for contract clients",
             "System testing and certification",
             "Preventative maintenance schedules",
-            "Fire alarm and emergency lighting reports",
         ],
     },
 ];
-
+export const tileToDetail: Record<string, string> = {
+    "CCTV Installation": "CCTV Systems",
+    "Intruder Alarms": "Intruder Alarms",
+    "Fire Alarms": "Fire Alarm Systems",
+    "24/7 Monitoring": "24/7 Monitoring",
+    "Access Control": "Access Control",
+    "Maintenance": "Maintenance Contracts",
+};
 export const testimonials: Testimonial[] = [
     {
         name: "Sean P.",
@@ -262,7 +289,7 @@ export const faqCategories: FaqCategory[] = [
                     "Yes. HKC systems include a smart app to arm, disarm and monitor from anywhere. 4G backup means it works even if broadband goes down.",
             },
             {
-                question: "Will the Gardai respond if my alarm triggers?",
+                question: "Will the Gardaí respond if my alarm triggers?",
                 answer:
                     "With a monitored system, yes. Our monitoring centre verifies and coordinates a rapid Garda response.",
             },
@@ -467,4 +494,104 @@ export const cyberPartners: CyberPartner[] = [
             "Trust Vector is CHR Securities' Irish cyber and AI partner — providing risk advisory, compliance support and threat intelligence tailored for the Irish and EU market.",
         tags: ["Irish Partner", "EU Compliant", "Risk Advisory", "AI Services"],
     },
+];
+
+
+export const calendarDays: CalendarDay[] = [
+    {
+        day: "Monday",
+        short: "Mon",
+        slots: [
+            { time: "9:00", taken: false },
+            { time: "9:30", taken: true },
+            { time: "10:00", taken: false },
+            { time: "10:30", taken: true },
+            { time: "11:00", taken: false },
+            { time: "11:30", taken: false },
+            { time: "2:00", taken: true },
+            { time: "2:30", taken: false },
+            { time: "3:00", taken: false },
+        ],
+    },
+    {
+        day: "Tuesday",
+        short: "Tue",
+        slots: [
+            { time: "9:00", taken: false },
+            { time: "9:30", taken: false },
+            { time: "10:00", taken: true },
+            { time: "10:30", taken: false },
+            { time: "11:00", taken: true },
+            { time: "11:30", taken: false },
+            { time: "2:00", taken: false },
+            { time: "2:30", taken: true },
+            { time: "3:00", taken: false },
+        ],
+    },
+    {
+        day: "Wednesday",
+        short: "Wed",
+        slots: [
+            { time: "9:00", taken: true },
+            { time: "9:30", taken: false },
+            { time: "10:00", taken: false },
+            { time: "10:30", taken: true },
+            { time: "11:00", taken: false },
+            { time: "11:30", taken: true },
+            { time: "2:00", taken: false },
+            { time: "2:30", taken: false },
+            { time: "3:00", taken: true },
+        ],
+    },
+    {
+        day: "Thursday",
+        short: "Thu",
+        slots: [
+            { time: "9:00", taken: false },
+            { time: "9:30", taken: true },
+            { time: "10:00", taken: false },
+            { time: "10:30", taken: false },
+            { time: "11:00", taken: true },
+            { time: "11:30", taken: false },
+            { time: "2:00", taken: true },
+            { time: "2:30", taken: false },
+            { time: "3:00", taken: false },
+        ],
+    },
+    {
+        day: "Friday",
+        short: "Fri",
+        slots: [
+            { time: "9:00", taken: false },
+            { time: "9:30", taken: false },
+            { time: "10:00", taken: true },
+            { time: "10:30", taken: false },
+            { time: "11:00", taken: false },
+            { time: "11:30", taken: true },
+            { time: "2:00", taken: false },
+            { time: "2:30", taken: true },
+            { time: "3:00", taken: false },
+        ],
+    },
+];
+
+export const propertyTypes: string[] = [
+    "Private Home",
+    "Commercial Business",
+    "Industrial Site",
+    "Retail Premises",
+];
+
+export const contactServiceOptions: string[] = [
+    "CCTV Installation",
+    "Intruder Alarm System",
+    "Fire Alarm System",
+    "Access Control / Intercom",
+    "24/7 Monitoring",
+    "Maintenance Contract",
+    "Business Security Bundle",
+    "Free Cyber Score",
+    "Cyber Consultation (from €650)",
+    "Apply Cyber / Trust Vector Enquiry",
+    "General Enquiry",
 ];

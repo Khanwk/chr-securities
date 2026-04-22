@@ -6,25 +6,26 @@ import {
   cyberPricing,
   cyberWhyItems,
   cyberPartners,
-} from "./data";
+} from "../data";
 import type {
   CyberService,
   CyberPricingCard,
   CyberWhyItem,
   CyberPartner,
-  PageProps,
-} from "./types";
+} from "../types";
 import QuoteModal from "./modals/QouteModal";
 import CyberScoreModal from "./modals/CyberScoreModal";
+import { useRouter } from "next/navigation";
 
-export default function Cyber({ setPage }: PageProps) {
+export default function Cyber() {
   const [cyberModalOpen, setCyberModalOpen] = useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const router = useRouter();
 
   const handleCtaTarget = (target: CyberPricingCard["ctaTarget"]) => {
     if (target === "modal-cyber") setCyberModalOpen(true);
     if (target === "modal-quote") setQuoteModalOpen(true);
-    if (target === "contact") setPage("contact");
+    if (target === "contact") router.push("/contact");
   };
 
   return (
@@ -62,7 +63,7 @@ export default function Cyber({ setPage }: PageProps) {
               Get Your Free Cyber Score
             </button>
             <button
-              onClick={() => setPage("contact")}
+              onClick={() => router.push("/contact")}
               className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D2D5E] transition-colors text-sm cursor-pointer"
             >
               Book Cyber Consultation
@@ -77,7 +78,7 @@ export default function Cyber({ setPage }: PageProps) {
             <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
               What We Offer
             </p>
-            <h2 className="text-4xl font-black uppercase text-[#0D2D5E] tracking-tight">
+            <h2 className="text-4xl font-black uppercase text-black tracking-tight">
               Cyber Services
             </h2>
           </div>
@@ -85,7 +86,7 @@ export default function Cyber({ setPage }: PageProps) {
             {cyberServices.map((service: CyberService) => (
               <div
                 key={service.title}
-                className="text-[#EBF4FF] rounded-xl p-8 border border-sky hover:shadow-md transition-shadow"
+                className="text-[#EBF4FF] rounded-xl p-8 border border-[#EBF4FF] hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-1 h-8 bg-[#F59E0B] rounded-full" />
@@ -116,7 +117,7 @@ export default function Cyber({ setPage }: PageProps) {
             <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
               Pricing
             </p>
-            <h2 className="text-4xl font-black uppercase text-[#0D2D5E] tracking-tight">
+            <h2 className="text-4xl font-black uppercase text-black tracking-tight">
               Choose Your Starting Point
             </h2>
           </div>
@@ -182,7 +183,7 @@ export default function Cyber({ setPage }: PageProps) {
             <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
               Trusted Partners
             </p>
-            <h2 className="text-4xl font-black uppercase text-[#0D2D5E] tracking-tight">
+            <h2 className="text-4xl font-black uppercase text-black tracking-tight">
               Who Powers Our Cyber Services
             </h2>
           </div>
@@ -190,7 +191,7 @@ export default function Cyber({ setPage }: PageProps) {
             {cyberPartners.map((partner: CyberPartner) => (
               <div
                 key={partner.name}
-                className="text-[#EBF4FF] rounded-xl p-8 border border-sky hover:shadow-md transition-shadow"
+                className="text-[#EBF4FF] rounded-xl p-8 border border-[#EBF4FF] hover:shadow-md transition-shadow"
               >
                 <p className="text-[#F59E0B] text-xs font-semibold uppercase tracking-widest mb-2">
                   {partner.subtitle}

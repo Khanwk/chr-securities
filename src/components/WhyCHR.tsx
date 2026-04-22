@@ -1,18 +1,26 @@
 "use client";
+import { useRouter } from "next/navigation";
 
-import { credentials, products, approvedSuppliers } from "./data";
-import type { Credential, Product, PageProps } from "./types";
+import { credentials, products, approvedSuppliers } from "../data";
+import type { Credential, Product } from "../types";
 
-export default function WhyCHR({ setPage }: PageProps) {
+export default function WhyCHR() {
+  const router = useRouter();
+
   return (
     <>
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-          <div className="relative">
+          <div className="relative flex flex-col gap-4">
             <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
-              alt="CHR Securities office"
-              className="rounded-2xl w-full h-[480px] object-cover"
+              src="https://images.pexels.com/photos/8293778/pexels-photo-8293778.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="CHR Securities installation"
+              className="rounded-2xl w-full h-64 object-cover"
+            />
+            <img
+              src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Security engineer at work"
+              className="rounded-2xl w-full h-48 object-cover"
             />
             <div className="absolute bottom-6 left-6 bg-[#F59E0B] text-white rounded-xl px-6 py-4 shadow-lg">
               <p className="text-3xl font-black">25+</p>
@@ -58,7 +66,7 @@ export default function WhyCHR({ setPage }: PageProps) {
             </div>
 
             <button
-              onClick={() => setPage("contact")}
+              onClick={() => router.push("/contact")}
               className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm tracking-wide cursor-pointer"
             >
               Book a Free Site Assessment
@@ -78,7 +86,7 @@ export default function WhyCHR({ setPage }: PageProps) {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 gap-6">
             {credentials.map((c: Credential) => (
               <div
                 key={c.title}
@@ -143,13 +151,13 @@ export default function WhyCHR({ setPage }: PageProps) {
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
           <button
-            onClick={() => setPage("contact")}
+            onClick={() => router.push("/contact")}
             className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm cursor-pointer"
           >
             Request a Free Quote
           </button>
           <button
-            onClick={() => setPage("services")}
+            onClick={() => router.push("/services")}
             className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D2D5E] transition-colors text-sm cursor-pointer"
           >
             View All Services

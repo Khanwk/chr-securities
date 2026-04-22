@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Modal from "../../ui/Modal";
-import type { ModalProps } from "../types";
+import type { ModalProps } from "../../types";
 
 interface CyberForm {
   businessName: string;
@@ -62,28 +62,28 @@ export default function CyberScoreModal({ onClose }: ModalProps) {
               onChange={(e) =>
                 setForm({ ...form, businessName: e.target.value })
               }
-              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-primary"
+              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-[#0D2D5E]"
             />
             <input
               type="text"
               placeholder="Your Name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-primary"
+              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-[#0D2D5E]"
             />
             <input
               type="email"
               placeholder="Email Address"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-primary"
+              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-[#0D2D5E]"
             />
             <input
               type="tel"
               placeholder="Phone Number"
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-primary"
+              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-[#333333] focus:outline-none focus:border-[#0D2D5E]"
             />
             <button
               onClick={handleSubmit}

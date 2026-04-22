@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { faqCategories } from "./data";
-import type { FaqCategory, FaqItem, PageProps } from "./types";
+import { faqCategories } from "../data";
+import type { FaqCategory, FaqItem } from "../types";
+import { useRouter } from "next/navigation";
 
-export default function FAQ({ setPage }: PageProps) {
+export default function FAQ() {
   const [activeTab, setActiveTab] = useState<string>(faqCategories[0].tab);
   const [openQuestion, setOpenQuestion] = useState<string | null>(null);
+  const router = useRouter();
 
   const activeCategory = faqCategories.find(
     (c: FaqCategory) => c.tab === activeTab,
@@ -103,7 +105,7 @@ export default function FAQ({ setPage }: PageProps) {
         </p>
 
         <button
-          onClick={() => setPage("contact")}
+          onClick={() => router.push("/contact")}
           className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm cursor-pointer"
         >
           Get in Touch
