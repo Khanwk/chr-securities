@@ -11,7 +11,7 @@ export default function Contact() {
   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const router = useRouter();
-  const { openQuote, openCyber } = useModal();
+  const { openCyber } = useModal();
   const [form, setForm] = useState<ContactForm>({
     firstName: "",
     phone: "",
@@ -40,13 +40,13 @@ export default function Contact() {
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
+            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-2">
               Get In Touch
             </p>
             <h1 className="text-4xl font-black uppercase text-black tracking-tight">
               Talk to Ciaran Directly.
             </h1>
-            <p className="text-[#333333] text-base mt-3 max-w-xl mx-auto leading-relaxed">
+            <p className="text-textMain text-base mt-3 max-w-xl mx-auto leading-relaxed">
               No call centre. No waiting. Ciaran responds to every enquiry
               personally — call, email or fill in the form.
             </p>
@@ -56,9 +56,9 @@ export default function Contact() {
             {/* LEFT — contact info + calendar */}
             <div className="flex flex-col gap-8">
               {/* Contact details card */}
-              <div className="bg-[#EBF4FF] rounded-2xl p-8">
+              <div className="bg-sky rounded-2xl p-8">
                 <div className="flex items-center gap-2 mb-6">
-                  <span className="w-2.5 h-2.5 rounded-full bg-green-500 flex-shrink-0" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500 shrink-0" />
                   <span className="text-green-700 text-xs font-semibold">
                     Accepting new clients — free site assessments available
                   </span>
@@ -66,34 +66,34 @@ export default function Contact() {
 
                 <div className="flex flex-col gap-5">
                   <div>
-                    <p className="text-xs font-semibold text-[#F59E0B] uppercase tracking-widest mb-1">
+                    <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-1">
                       Phone
                     </p>
                     <a
                       href="tel:0879096434"
-                      className="text-[#0D2D5E] font-black text-2xl hover:text-[#F59E0B] transition-colors cursor-pointer"
+                      className="text-primary font-black text-2xl hover:text-accent transition-colors cursor-pointer"
                     >
                       087 909 6434
                     </a>
                   </div>
 
                   <div>
-                    <p className="text-xs font-semibold text-[#F59E0B] uppercase tracking-widest mb-1">
+                    <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-1">
                       Email
                     </p>
                     <a
                       href="mailto:info@chrsecurities.ie"
-                      className="text-[#0D2D5E] font-bold text-base hover:text-[#F59E0B] transition-colors cursor-pointer"
+                      className="text-primary font-bold text-base hover:text-accent transition-colors cursor-pointer"
                     >
                       info@chrsecurities.ie
                     </a>
                   </div>
 
                   <div>
-                    <p className="text-xs font-semibold text-[#F59E0B] uppercase tracking-widest mb-1">
+                    <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-1">
                       Coverage
                     </p>
-                    <p className="text-[#333333] text-sm font-semibold">
+                    <p className="text-textMain text-sm font-semibold">
                       All of Ireland — Residential, Commercial, Industrial
                     </p>
                   </div>
@@ -102,10 +102,10 @@ export default function Contact() {
 
               {/* Booking calendar */}
               <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
-                <h3 className="text-[#0D2D5E] font-black text-lg uppercase tracking-tight mb-1">
+                <h3 className="text-primary font-black text-lg uppercase tracking-tight mb-1">
                   Book a Time Slot
                 </h3>
-                <p className="text-[#333333] text-sm mb-6">
+                <p className="text-textMain text-sm mb-6">
                   Select a day then choose an available 30-minute slot.
                 </p>
 
@@ -120,8 +120,8 @@ export default function Contact() {
                       }}
                       className={`px-4 py-2 rounded-lg text-sm font-bold transition-colors cursor-pointer ${
                         selectedDay === d.day
-                          ? "bg-[#0D2D5E] text-white"
-                          : "bg-[#EBF4FF] text-[#0D2D5E] hover:bg-[#0D2D5E]/10"
+                          ? "bg-primary text-white"
+                          : "bg-sky text-primary hover:bg-primary/10"
                       }`}
                     >
                       {d.short}
@@ -141,8 +141,8 @@ export default function Contact() {
                           slot.taken
                             ? "bg-gray-100 text-gray-400 cursor-not-allowed line-through"
                             : selectedSlot === slot.time
-                              ? "bg-[#F59E0B] text-white cursor-pointer"
-                              : "bg-[#EBF4FF] text-[#0D2D5E] hover:bg-[#0D2D5E] hover:text-white cursor-pointer"
+                              ? "bg-accent text-white cursor-pointer"
+                              : "bg-sky text-primary hover:bg-primary hover:text-white cursor-pointer"
                         }`}
                       >
                         {slot.time}
@@ -150,14 +150,14 @@ export default function Contact() {
                     ))}
                   </div>
                 ) : (
-                  <p className="text-[#333333] text-sm text-center py-6 bg-[#EBF4FF] rounded-xl">
+                  <p className="text-textMain text-sm text-center py-6 bg-sky rounded-xl">
                     Select a day above to see available slots.
                   </p>
                 )}
 
                 {selectedSlot && selectedDay && (
-                  <div className="mt-4 bg-[#F59E0B]/10 border border-[#F59E0B]/20 rounded-xl px-4 py-3">
-                    <p className="text-[#0D2D5E] text-sm font-bold">
+                  <div className="mt-4 bg-accent/10 border border-accent/20 rounded-xl px-4 py-3">
+                    <p className="text-primary text-sm font-bold">
                       {selectedDay} at {selectedSlot} selected — complete the
                       form to confirm your booking.
                     </p>
@@ -167,10 +167,10 @@ export default function Contact() {
             </div>
 
             {/* RIGHT — quote form */}
-            <div className="bg-[#0D2D5E] rounded-2xl p-8">
+            <div className="bg-primary rounded-2xl p-8">
               {submitted ? (
                 <div className="text-center py-16">
-                  <div className="w-16 h-16 bg-[#F59E0B] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-white font-black text-2xl">
                       &check;
                     </span>
@@ -184,7 +184,7 @@ export default function Contact() {
                 </div>
               ) : (
                 <>
-                  <p className="text-[#F59E0B] font-semibold text-xs uppercase tracking-widest mb-1">
+                  <p className="text-accent font-semibold text-xs uppercase tracking-widest mb-1">
                     No obligation
                   </p>
                   <h3 className="text-white font-black text-2xl uppercase tracking-tight mb-6">
@@ -199,7 +199,7 @@ export default function Contact() {
                       onChange={(e) =>
                         setForm({ ...form, firstName: e.target.value })
                       }
-                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:border-[#F59E0B]"
+                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:border-accent"
                     />
                     <input
                       type="tel"
@@ -208,7 +208,7 @@ export default function Contact() {
                       onChange={(e) =>
                         setForm({ ...form, phone: e.target.value })
                       }
-                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:border-[#F59E0B]"
+                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:border-accent"
                     />
                     <input
                       type="email"
@@ -217,20 +217,20 @@ export default function Contact() {
                       onChange={(e) =>
                         setForm({ ...form, email: e.target.value })
                       }
-                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:border-[#F59E0B]"
+                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:border-accent"
                     />
                     <select
                       value={form.propertyType}
                       onChange={(e) =>
                         setForm({ ...form, propertyType: e.target.value })
                       }
-                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#F59E0B] cursor-pointer"
+                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-accent cursor-pointer"
                     >
-                      <option value="" className="text-[#333333]">
+                      <option value="" className="text-textMain">
                         Property Type
                       </option>
                       {propertyTypes.map((p: string) => (
-                        <option key={p} value={p} className="text-[#333333]">
+                        <option key={p} value={p} className="text-textMain">
                           {p}
                         </option>
                       ))}
@@ -240,13 +240,13 @@ export default function Contact() {
                       onChange={(e) =>
                         setForm({ ...form, service: e.target.value })
                       }
-                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#F59E0B] cursor-pointer"
+                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-accent cursor-pointer"
                     >
-                      <option value="" className="text-[#333333]">
+                      <option value="" className="text-textMain">
                         Service Required
                       </option>
                       {contactServiceOptions.map((s: string) => (
-                        <option key={s} value={s} className="text-[#333333]">
+                        <option key={s} value={s} className="text-textMain">
                           {s}
                         </option>
                       ))}
@@ -258,12 +258,12 @@ export default function Contact() {
                         setForm({ ...form, message: e.target.value })
                       }
                       rows={4}
-                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:border-[#F59E0B] resize-none"
+                      className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:border-accent resize-none"
                     />
 
                     {selectedSlot && selectedDay && (
-                      <div className="bg-[#F59E0B]/20 border border-[#F59E0B]/30 rounded-lg px-4 py-3">
-                        <p className="text-[#F59E0B] text-xs font-semibold">
+                      <div className="bg-accent/20 border border-accent/30 rounded-lg px-4 py-3">
+                        <p className="text-accent text-xs font-semibold">
                           Booking: {selectedDay} at {selectedSlot}
                         </p>
                       </div>
@@ -271,7 +271,7 @@ export default function Contact() {
 
                     <button
                       onClick={handleSubmit}
-                      className="bg-[#F59E0B] text-white font-bold py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm tracking-wide cursor-pointer"
+                      className="bg-accent text-white font-bold py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm tracking-wide cursor-pointer"
                     >
                       Send Enquiry
                     </button>
@@ -287,7 +287,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="bg-[#0D2D5E] py-12 px-6 text-center">
+      <section className="bg-primary py-12 px-6 text-center">
         <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">
           Not Ready to Commit?
         </h2>
@@ -297,13 +297,13 @@ export default function Contact() {
         <div className="flex flex-wrap justify-center gap-4">
           <button
             onClick={() => openCyber()}
-            className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm cursor-pointer"
+            className="bg-accent text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm cursor-pointer"
           >
             Free Cyber Score
           </button>
           <button
             onClick={() => router.push("/services")}
-            className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D2D5E] transition-colors text-sm cursor-pointer"
+            className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-colors text-sm cursor-pointer"
           >
             View All Services
           </button>

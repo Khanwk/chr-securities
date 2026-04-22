@@ -1,19 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #0d2d5e;
+  --color-accent: #f59e0b;
+  --color-sky: #ebf4ff;
+  --color-textMain: #333333;
+
+  --breakpoint-nav: 960px;
+  --breakpoint-tablet: 900px;
+  --breakpoint-hero: 700px;
+  --breakpoint-mobile: 580px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-slow-zoom {
+  animation: slowZoom 14s ease-in-out infinite alternate;
+}
+
+.animate-slow-zoom-tile {
+  animation: slowZoom 8s ease-in-out infinite alternate;
 }

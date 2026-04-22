@@ -106,3 +106,17 @@ export interface ServiceDetail {
     img: string;
     bullets: string[];
 }
+export interface ChatMessage {
+    role: "bot" | "user";
+    text: string;
+}
+
+export interface BotRule {
+    keywords: string[];
+    response: string;
+}
+
+export interface QuickChip {
+    label: string;
+    message: string;
+}

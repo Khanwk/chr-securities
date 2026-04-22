@@ -19,7 +19,7 @@ export default function Modal({ onClose, children }: Props) {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-[#0D2D5E] font-black text-xl cursor-pointer leading-none"
+          className="absolute top-4 right-4 text-gray-400 hover:text-primary font-black text-xl cursor-pointer leading-none"
         >
           &times;
         </button>

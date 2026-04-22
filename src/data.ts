@@ -14,6 +14,8 @@ import type {
     CyberWhyItem,
     CyberPartner,
     CalendarDay,
+    QuickChip,
+    BotRule,
 } from "./types";
 
 export const navLinks: NavLink[] = [
@@ -84,6 +86,67 @@ export const serviceTiles: ServiceTile[] = [
         tag: "Annual Cover",
         img: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
+];
+export const botRules: BotRule[] = [
+    {
+        keywords: ["cctv", "camera", "surveillance"],
+        response:
+            "We install Hikvision HD and IP CCTV systems — 4 to 64 cameras depending on your site. Free app included so you can view live footage from anywhere. 24hr monitoring available via Resure. Would you like a free site assessment?",
+    },
+    {
+        keywords: ["intruder", "alarm", "hkc", "burglar", "wireless", "wired"],
+        response:
+            "We supply and fit wired and wireless HKC alarm systems. Smart app control, 4G GSM and Wi-Fi backup, and rapid Garda response via our monitoring centre. We cover homes, businesses and industrial sites. Want a free quote?",
+    },
+    {
+        keywords: ["fire", "smoke", "detector"],
+        response:
+            "We install and maintain fully certified fire alarm systems — smoke and heat detectors, audible and visual alerts, automatic fire brigade notification. Quarterly maintenance contracts available. Compliant with Irish Fire Safety Regulations.",
+    },
+    {
+        keywords: ["access", "intercom", "door entry"],
+        response:
+            "We supply ACT standalone single-door and PC-based multi-door access control systems. Full range of audio and video intercoms to suit every budget. Per-person, per-door, per-time access restrictions available.",
+    },
+    {
+        keywords: ["monitor", "24 hour", "24hr", "resure"],
+        response:
+            "Our 24hr professional monitoring via Resure covers CCTV, intruder alarms and fire alarms. Rapid Garda response coordination and automatic fire brigade notification included.",
+    },
+    {
+        keywords: ["maintenance", "service contract", "repair", "annual"],
+        response:
+            "We offer annual and quarterly maintenance contracts with 24hr emergency call-out for contract clients. System testing, certification and preventative maintenance schedules included.",
+    },
+    {
+        keywords: ["book", "consult", "appointment", "slot"],
+        response:
+            "To book a consultation or site assessment, head to our Contact page or call Ciaran directly on 087 909 6434. Free site assessments are available across all of Ireland.",
+    },
+    {
+        keywords: ["cyber", "hack", "data", "score", "365", "azure", "gdpr"],
+        response:
+            "We offer a free Cyber Score — an instant health check of your business exposure. Full cyber consultations from €650. Powered by Apply Cyber and Trust Vector, our Irish cyber partners. Want to get your free score now?",
+    },
+    {
+        keywords: ["price", "cost", "much", "€", "quote"],
+        response:
+            "All pricing is tailored to your site and requirements — no hidden costs. Request a free quote and Ciaran will get back to you personally with a clear breakdown.",
+    },
+    {
+        keywords: ["psa", "licence", "license", "vetted"],
+        response:
+            "Ciaran holds a full PSA licence from Ireland's Private Security Authority — mandatory for alarm and CCTV installation. All personnel are Garda-vetted and trained to the required standard.",
+    },
+];
+
+export const quickChips: QuickChip[] = [
+    { label: "CCTV pricing?", message: "cctv pricing" },
+    { label: "Intruder alarms?", message: "intruder alarm" },
+    { label: "Fire alarms?", message: "fire alarm" },
+    { label: "Book a slot", message: "book appointment" },
+    { label: "Maintenance?", message: "maintenance contract" },
+    { label: "Access control?", message: "access control" },
 ];
 
 export const serviceDetails: ServiceDetail[] = [

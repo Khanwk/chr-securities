@@ -21,11 +21,11 @@ export default function FAQ() {
   return (
     <>
       {/* FAQ SECTION */}
-      <section className="bg-white text-[#333333] py-16 px-6">
+      <section className="bg-white text-textMain py-16 px-6">
         <div className="max-w-4xl mx-auto">
           {/* HEADER */}
           <div className="text-center mb-12">
-            <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
+            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-2">
               Got Questions
             </p>
 
@@ -45,8 +45,8 @@ export default function FAQ() {
                 }}
                 className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-colors cursor-pointer ${
                   activeTab === c.tab
-                    ? "bg-[#0D2D5E] text-white"
-                    : "bg-[#EBF4FF] text-[#333333] hover:bg-[#0D2D5E]/10"
+                    ? "bg-primary text-white"
+                    : "bg-sky text-textMain hover:bg-primary/10"
                 }`}
               >
                 {c.tab}
@@ -63,20 +63,20 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => handleQuestion(item.question)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left bg-white hover:bg-[#EBF4FF] transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between px-6 py-5 text-left bg-white hover:bg-sky transition-colors cursor-pointer"
                 >
-                  <span className="text-[#333333] font-bold text-sm pr-4">
+                  <span className="text-textMain font-bold text-sm pr-4">
                     {item.question}
                   </span>
 
-                  <span className="text-[#F59E0B] font-black text-xl shrink-0">
+                  <span className="text-accent font-black text-xl shrink-0">
                     {openQuestion === item.question ? "−" : "+"}
                   </span>
                 </button>
 
                 {openQuestion === item.question && (
-                  <div className="px-6 py-5 bg-[#EBF4FF] border-t border-gray-200">
-                    <p className="text-[#333333] text-sm leading-relaxed">
+                  <div className="px-6 py-5 bg-sky border-t border-gray-200">
+                    <p className="text-textMain text-sm leading-relaxed">
                       {item.answer}
                     </p>
                   </div>
@@ -88,7 +88,7 @@ export default function FAQ() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="bg-[#0D2D5E] text-white py-12 px-6 text-center">
+      <section className="bg-primary text-white py-12 px-6 text-center">
         <h2 className="text-2xl font-black uppercase tracking-tight mb-4">
           Still Have Questions?
         </h2>
@@ -97,7 +97,7 @@ export default function FAQ() {
           Call Ciaran directly on{" "}
           <a
             href="tel:0879096434"
-            className="text-[#F59E0B] font-bold hover:underline"
+            className="text-accent font-bold hover:underline"
           >
             087 909 6434
           </a>{" "}
@@ -106,7 +106,7 @@ export default function FAQ() {
 
         <button
           onClick={() => router.push("/contact")}
-          className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm cursor-pointer"
+          className="bg-accent text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm cursor-pointer"
         >
           Get in Touch
         </button>

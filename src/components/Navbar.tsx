@@ -5,6 +5,7 @@ import { navLinks } from "../data";
 import type { NavLink } from "../types";
 import { useState } from "react";
 import Image from "next/image";
+import Logo from "../app/LOGO.png";
 
 interface Props {
   setPage: (page: string) => void;
@@ -22,14 +23,14 @@ export default function Navbar({ setPage, activePage }: Props) {
   };
 
   return (
-    <>
-      <nav className="flex items-center justify-between px-6 py-3 bg-[#0D2D5E] text-white sticky top-0 z-50">
+    <div className="sticky top-0 z-50">
+      <nav className="flex items-center justify-between px-6 py-3 bg-primary text-white">
         <button
           onClick={() => handleNav("home")}
-          className="flex-shrink-0 cursor-pointer"
+          className="shrink-0 cursor-pointer"
         >
           <Image
-            src="/chr_securities_logo.png"
+            src={Logo.src}
             alt="CHR Securities"
             width={140}
             height={48}
@@ -37,13 +38,13 @@ export default function Navbar({ setPage, activePage }: Props) {
           />
         </button>
 
-        <div className="hidden md:flex gap-6 text-sm font-medium">
+        <div className="hidden nav:flex gap-6 text-sm font-medium">
           {navLinks.map((l: NavLink) => (
             <button
               key={l.key}
               onClick={() => handleNav(l.key)}
-              className={`hover:text-[#F59E0B] transition-colors cursor-pointer ${
-                activePage === l.key ? "text-[#F59E0B] font-semibold" : ""
+              className={`hover:text-accent transition-colors cursor-pointer ${
+                activePage === l.key ? "text-accent font-semibold" : ""
               }`}
             >
               {l.label}
@@ -54,43 +55,49 @@ export default function Navbar({ setPage, activePage }: Props) {
         <div className="flex items-center gap-3">
           <button
             onClick={openQuote}
-            className="bg-[#F59E0B] text-white px-4 py-2 rounded text-sm font-semibold hover:bg-yellow-500 transition-colors cursor-pointer"
+            className="bg-accent text-white px-4 py-2 rounded text-sm font-semibold hover:bg-yellow-500 transition-colors cursor-pointer"
           >
             Free Quote
           </button>
 
           <button
-            className="md:hidden flex flex-col gap-1.5 p-1 cursor-pointer"
+            className="nav:hidden flex flex-col gap-1.5 p-1 cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
             <span
-              className={`block w-6 h-0.5 bg-white transition-all ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
+              className={`block w-6 h-0.5 bg-white transition-all ${
+                menuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
             />
             <span
-              className={`block w-6 h-0.5 bg-white transition-all ${menuOpen ? "opacity-0" : ""}`}
+              className={`block w-6 h-0.5 bg-white transition-all ${
+                menuOpen ? "opacity-0" : ""
+              }`}
             />
             <span
-              className={`block w-6 h-0.5 bg-white transition-all ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+              className={`block w-6 h-0.5 bg-white transition-all ${
+                menuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
             />
           </button>
         </div>
       </nav>
 
-      <div className="bg-[#F59E0B] text-[#0D2D5E] text-xs font-semibold text-center py-1.5 px-4 tracking-wide">
+      <div className="bg-accent text-primary text-xs font-semibold text-center py-1.5 px-4 tracking-wide">
         PSA Licensed &nbsp;|&nbsp; Arachas Insured &nbsp;|&nbsp; CCTV · Alarms ·
         Fire · Access Control &nbsp;|&nbsp; Former Lead Engineer — Sure Guard
         Securities &nbsp;|&nbsp; Now Offering Cyber Security
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-[#0D2D5E] text-white flex flex-col px-6 py-4 gap-4 text-sm font-medium z-40">
+        <div className="nav:hidden bg-primary text-white flex flex-col px-6 py-4 gap-4 text-sm font-medium border-t border-white/10">
           {navLinks.map((l: NavLink) => (
             <button
               key={l.key}
               onClick={() => handleNav(l.key)}
-              className={`text-left hover:text-[#F59E0B] transition-colors cursor-pointer ${
-                activePage === l.key ? "text-[#F59E0B] font-semibold" : ""
+              className={`text-left hover:text-accent transition-colors cursor-pointer ${
+                activePage === l.key ? "text-accent font-semibold" : ""
               }`}
             >
               {l.label}
@@ -98,6 +105,6 @@ export default function Navbar({ setPage, activePage }: Props) {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }

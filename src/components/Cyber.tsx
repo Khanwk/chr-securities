@@ -30,7 +30,7 @@ export default function Cyber() {
 
   return (
     <>
-      <section className="relative bg-[#0D2D5E] py-24 px-6 overflow-hidden">
+      <section className="relative bg-primary py-24 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80"
@@ -39,7 +39,7 @@ export default function Cyber() {
           />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-4">
             Cyber Security
           </p>
           <h1 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-tight mb-6">
@@ -47,7 +47,7 @@ export default function Cyber() {
             <br />
             Protect Your Business.
             <br />
-            <span className="text-[#F59E0B]">Protect Your Data.</span>
+            <span className="text-accent">Protect Your Data.</span>
           </h1>
           <p className="text-white/80 text-base leading-relaxed max-w-2xl mx-auto mb-10">
             Your cameras, alarms and systems are connected to the internet. If
@@ -58,13 +58,13 @@ export default function Cyber() {
           <div className="flex flex-wrap justify-center gap-4">
             <button
               onClick={() => setCyberModalOpen(true)}
-              className="bg-[#F59E0B] text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm cursor-pointer"
+              className="bg-accent text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm cursor-pointer"
             >
               Get Your Free Cyber Score
             </button>
             <button
               onClick={() => router.push("/contact")}
-              className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D2D5E] transition-colors text-sm cursor-pointer"
+              className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-colors text-sm cursor-pointer"
             >
               Book Cyber Consultation
             </button>
@@ -75,7 +75,7 @@ export default function Cyber() {
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
+            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-2">
               What We Offer
             </p>
             <h2 className="text-4xl font-black uppercase text-black tracking-tight">
@@ -86,11 +86,11 @@ export default function Cyber() {
             {cyberServices.map((service: CyberService) => (
               <div
                 key={service.title}
-                className="text-[#EBF4FF] rounded-xl p-8 border border-[#EBF4FF] hover:shadow-md transition-shadow"
+                className="text-sky rounded-xl p-8 border border-sky hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-1 h-8 bg-[#F59E0B] rounded-full" />
-                  <h3 className="text-lg font-black text-[#0D2D5E] uppercase tracking-tight">
+                  <div className="w-1 h-8 bg-accent rounded-full" />
+                  <h3 className="text-lg font-black text-primary uppercase tracking-tight">
                     {service.title}
                   </h3>
                 </div>
@@ -98,9 +98,9 @@ export default function Cyber() {
                   {service.bullets.map((bullet: string) => (
                     <li
                       key={bullet}
-                      className="flex items-start gap-3 text-sm text-[#333333] leading-relaxed"
+                      className="flex items-start gap-3 text-sm text-textMain leading-relaxed"
                     >
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#F59E0B] shrink-0" />
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                       {bullet}
                     </li>
                   ))}
@@ -111,10 +111,10 @@ export default function Cyber() {
         </div>
       </section>
 
-      <section className="text-[#EBF4FF] py-16 px-6 bg-[#EBF4FF]">
+      <section className="text-sky py-16 px-6 bg-sky">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
+            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-2">
               Pricing
             </p>
             <h2 className="text-4xl font-black uppercase text-black tracking-tight">
@@ -127,18 +127,18 @@ export default function Cyber() {
                 key={card.title}
                 className="bg-white rounded-xl p-8 shadow-sm border border-white flex flex-col hover:shadow-md transition-shadow"
               >
-                <h3 className="text-[#0D2D5E] font-black text-xl uppercase tracking-tight mb-2">
+                <h3 className="text-primary font-black text-xl uppercase tracking-tight mb-2">
                   {card.title}
                 </h3>
-                <p className="text-[#F59E0B] font-black text-3xl mb-4">
+                <p className="text-accent font-black text-3xl mb-4">
                   {card.price}
                 </p>
-                <p className="text-[#333333] text-sm leading-relaxed mb-8 flex-1">
+                <p className="text-textMain text-sm leading-relaxed mb-8 flex-1">
                   {card.description}
                 </p>
                 <button
                   onClick={() => handleCtaTarget(card.ctaTarget)}
-                  className="w-full bg-[#0D2D5E] text-white font-bold py-3 rounded-lg hover:bg-[#F59E0B] transition-colors text-sm cursor-pointer"
+                  className="w-full bg-primary text-white font-bold py-3 rounded-lg hover:bg-accent transition-colors text-sm cursor-pointer"
                 >
                   {card.cta}
                 </button>
@@ -148,10 +148,10 @@ export default function Cyber() {
         </div>
       </section>
 
-      <section className="bg-[#0D2D5E] py-16 px-6">
+      <section className="bg-primary py-16 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
+            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-2">
               Why It Matters
             </p>
             <h2 className="text-4xl font-black uppercase text-white tracking-tight">
@@ -164,7 +164,7 @@ export default function Cyber() {
                 key={item.heading}
                 className="bg-white/10 border border-white/15 rounded-xl p-6"
               >
-                <div className="w-1 h-6 bg-[#F59E0B] rounded-full mb-4" />
+                <div className="w-1 h-6 bg-accent rounded-full mb-4" />
                 <h3 className="text-white font-black text-base mb-2">
                   {item.heading}
                 </h3>
@@ -180,7 +180,7 @@ export default function Cyber() {
       <section className="bg-white py-16 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
+            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-2">
               Trusted Partners
             </p>
             <h2 className="text-4xl font-black uppercase text-black tracking-tight">
@@ -191,22 +191,22 @@ export default function Cyber() {
             {cyberPartners.map((partner: CyberPartner) => (
               <div
                 key={partner.name}
-                className="text-[#EBF4FF] rounded-xl p-8 border border-[#EBF4FF] hover:shadow-md transition-shadow"
+                className="text-sky rounded-xl p-8 border border-sky hover:shadow-md transition-shadow"
               >
-                <p className="text-[#F59E0B] text-xs font-semibold uppercase tracking-widest mb-2">
+                <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">
                   {partner.subtitle}
                 </p>
-                <h3 className="text-[#0D2D5E] font-black text-2xl mb-4">
+                <h3 className="text-primary font-black text-2xl mb-4">
                   {partner.name}
                 </h3>
-                <p className="text-[#333333] text-sm leading-relaxed mb-6">
+                <p className="text-textMain text-sm leading-relaxed mb-6">
                   {partner.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {partner.tags.map((tag: string) => (
                     <span
                       key={tag}
-                      className="bg-[#0D2D5E] text-white text-xs font-semibold px-3 py-1.5 rounded-full"
+                      className="bg-primary text-white text-xs font-semibold px-3 py-1.5 rounded-full"
                     >
                       {tag}
                     </span>
@@ -218,7 +218,7 @@ export default function Cyber() {
         </div>
       </section>
 
-      <section className="bg-[#F59E0B] py-12 px-6 text-center">
+      <section className="bg-accent py-12 px-6 text-center">
         <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">
           Start With a Free Cyber Score
         </h2>
@@ -227,7 +227,7 @@ export default function Cyber() {
         </p>
         <button
           onClick={() => setCyberModalOpen(true)}
-          className="bg-white text-[#F59E0B] font-bold px-8 py-4 rounded-lg hover:bg-[#0D2D5E] hover:text-white transition-colors text-sm cursor-pointer"
+          className="bg-white text-accent font-bold px-8 py-4 rounded-lg hover:bg-primary hover:text-white transition-colors text-sm cursor-pointer"
         >
           Get Your Free Cyber Score
         </button>
