@@ -16,7 +16,7 @@ export default function Home() {
       <section className="relative min-h-[90vh] bg-primary overflow-hidden flex items-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero-bg.jpg"
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80"
             alt="Security background"
             className="w-full h-full object-cover opacity-20 animate-slow-zoom"
           />
