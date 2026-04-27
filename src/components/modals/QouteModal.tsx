@@ -106,7 +106,7 @@ export default function QuoteModal({ onClose }: ModalProps) {
             />
             <input
               type="email"
-              placeholder="Email"
+              placeholder="Email *"
               required
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
