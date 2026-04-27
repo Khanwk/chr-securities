@@ -110,7 +110,7 @@ export default function QuoteModal({ onClose }: ModalProps) {
               required
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:border-accent"
+              className="border border-gray-200 rounded-lg px-4 py-3 text-sm text-textMain focus:outline-none focus:border-primary"
             />
             <select
               value={form.service}
