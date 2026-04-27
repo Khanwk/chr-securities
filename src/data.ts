@@ -658,3 +658,18 @@ export const contactServiceOptions: string[] = [
     "Apply Cyber / Trust Vector Enquiry",
     "General Enquiry",
 ];
+export const serviceOptions: string[] = [
+    "CCTV Installation",
+    "Intruder Alarm System",
+    "Fire Alarm System",
+    "Access Control / Intercom",
+    "24/7 Monitoring",
+    "Maintenance Contract",
+    "Business Security Bundle",
+    "Free Cyber Score",
+    "Cyber Consultation (from €650)",
+    "Apply Cyber / Trust Vector Enquiry",
+    "General Enquiry",
+];
+export const API_ENDPOINT =
+    "https://3fyqf22t6zqh4md4vlauj4kyje0vqync.lambda-url.ap-southeast-2.on.aws/";

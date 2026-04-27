@@ -62,7 +62,8 @@ export function SecurityAssistantSection() {
           </h2>
           <p className="text-textMain text-base mt-3 max-w-xl mx-auto leading-relaxed">
             Get instant answers about CCTV, alarms, fire systems, access control
-            or cyber security. Available around the clock.
+            or cyber security. Book a consultation or request a quote —
+            available around the clock.
           </p>
         </div>
 
@@ -143,27 +144,6 @@ export function SecurityAssistantSection() {
                 Send
               </button>
             </div>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4 mt-6">
-            <button
-              onClick={openQuote}
-              className="bg-primary text-white font-bold px-6 py-3 rounded-lg hover:bg-accent transition-colors text-sm cursor-pointer"
-            >
-              Request a Free Quote
-            </button>
-            <button
-              onClick={openCyber}
-              className="border-2 border-primary text-primary font-bold px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors text-sm cursor-pointer"
-            >
-              Get Free Cyber Score
-            </button>
-            <button
-              onClick={() => router.push("/contact")}
-              className="border-2 border-primary text-primary font-bold px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors text-sm cursor-pointer"
-            >
-              Book a Consultation
-            </button>
           </div>
         </div>
       </div>

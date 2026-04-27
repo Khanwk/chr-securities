@@ -15,7 +15,9 @@ export default function Home() {
     <>
       <section className="relative min-h-[90vh] bg-primary overflow-hidden flex items-center">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
+            fill
+            priority
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80"
             alt="Security background"
             className="w-full h-full object-cover opacity-20 animate-slow-zoom"
@@ -77,14 +79,18 @@ export default function Home() {
             {mosaicImages.map((image: MosaicImage) => (
               <div
                 key={image.alt}
-                className={`rounded-2xl overflow-hidden group ${
-                  mosaicImages.indexOf(image) === 0 ? "row-span-2" : ""
+                className={`relative rounded-2xl overflow-hidden group ${
+                  mosaicImages.indexOf(image) === 0
+                    ? "row-span-2 h-125"
+                    : "h-60"
                 }`}
               >
-                <img
+                <Image
+                  fill
+                  priority
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                  className="object-cover group-hover:scale-105 transition duration-700"
                 />
               </div>
             ))}

@@ -9,6 +9,7 @@ import {
 } from "@/data";
 import type { ServiceTile, ServiceDetail, Testimonial } from "@/types";
 import { useModal } from "@/context/ModalContext";
+import Image from "next/image";
 
 export default function Services() {
   const { openQuote } = useModal();
@@ -42,12 +43,14 @@ export default function Services() {
                 onClick={() => handleTileClick(s.title)}
                 className="relative overflow-hidden group cursor-pointer h-72"
               >
-                <img
+                <Image
+                  fill
+                  priority
                   src={s.img}
                   alt={s.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
                   <span className="bg-accent text-white px-3 py-1 text-xs w-fit mb-2 rounded font-semibold uppercase tracking-wide">
                     {s.tag}
                   </span>
@@ -82,12 +85,14 @@ export default function Services() {
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="relative h-48 overflow-hidden group">
-                  <img
+                  <Image
+                    fill
+                    priority
                     src={service.img}
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex flex-col justify-end p-5">
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent flex flex-col justify-end p-5">
                     <span className="bg-accent text-white px-3 py-1 text-xs w-fit mb-2 rounded font-semibold uppercase tracking-wide">
                       {service.tag}
                     </span>
@@ -113,22 +118,6 @@ export default function Services() {
             ))}
           </div>
         </div>
-      </section>
-
-      <section className="bg-white py-12 px-6 text-center">
-        <h2 className="text-2xl font-black text-primary uppercase tracking-tight mb-4">
-          Ready to Get Protected?
-        </h2>
-        <p className="text-textMain text-sm mb-6">
-          Request a free quote for any service — Ciaran will get back to you
-          personally.
-        </p>
-        <button
-          onClick={openQuote}
-          className="bg-accent text-white font-bold px-10 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm tracking-wide cursor-pointer"
-        >
-          Request a Quote for Any Service
-        </button>
       </section>
 
       <section className="bg-primary py-16 px-6">
@@ -159,6 +148,21 @@ export default function Services() {
             ))}
           </div>
         </div>
+      </section>
+      <section className="bg-white py-12 px-6 text-center">
+        <h2 className="text-2xl font-black text-primary uppercase tracking-tight mb-4">
+          Ready to Get Protected?
+        </h2>
+        <p className="text-textMain text-sm mb-6">
+          Request a free quote for any service — Ciaran will get back to you
+          personally.
+        </p>
+        <button
+          onClick={openQuote}
+          className="bg-accent text-white font-bold px-10 py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm tracking-wide cursor-pointer"
+        >
+          Request a Quote for Any Service
+        </button>
       </section>
     </>
   );

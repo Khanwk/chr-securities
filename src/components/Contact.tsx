@@ -5,11 +5,14 @@ import { calendarDays, propertyTypes, contactServiceOptions } from "../data";
 import type { CalendarDay, TimeSlot, ContactForm } from "../types";
 import { useModal } from "@/context/ModalContext";
 import { useRouter } from "next/navigation";
+import { submitToApi } from "@/lib/api";
 
 export default function Contact() {
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
   const { openCyber } = useModal();
   const [form, setForm] = useState<ContactForm>({
@@ -26,9 +29,32 @@ export default function Contact() {
     setSelectedSlot(slot.time);
   };
 
-  const handleSubmit = () => {
-    if (!form.firstName || !form.phone) return;
-    setSubmitted(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.firstName.trim() || !form.phone.trim()) {
+      setError("Please fill in all required fields.");
+      return;
+    }
+    setError(null);
+    setIsSubmitting(true);
+    try {
+      await submitToApi({
+        name: form.firstName,
+        phone: form.phone,
+        email: form.email,
+        service: form.service,
+        description: form.message,
+        propertyType: form.propertyType,
+        timeline: `${selectedDay ?? ""} ${selectedSlot ?? ""}`.trim(),
+        platform: "CHR Securities Contact",
+        action: "contact",
+      });
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please call us on 087 909 6434.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const activeDay = calendarDays.find(
@@ -171,9 +197,19 @@ export default function Contact() {
               {submitted ? (
                 <div className="text-center py-16">
                   <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-black text-2xl">
-                      &check;
-                    </span>
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={3}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
                   </div>
                   <h3 className="text-white font-black text-xl uppercase tracking-tight mb-2">
                     Message Sent
@@ -191,10 +227,11 @@ export default function Contact() {
                     Send an Enquiry
                   </h3>
 
-                  <div className="flex flex-col gap-4">
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <input
                       type="text"
                       placeholder="First Name *"
+                      required
                       value={form.firstName}
                       onChange={(e) =>
                         setForm({ ...form, firstName: e.target.value })
@@ -204,6 +241,7 @@ export default function Contact() {
                     <input
                       type="tel"
                       placeholder="Phone *"
+                      required
                       value={form.phone}
                       onChange={(e) =>
                         setForm({ ...form, phone: e.target.value })
@@ -213,6 +251,7 @@ export default function Contact() {
                     <input
                       type="email"
                       placeholder="Email"
+                      required
                       value={form.email}
                       onChange={(e) =>
                         setForm({ ...form, email: e.target.value })
@@ -268,18 +307,28 @@ export default function Contact() {
                         </p>
                       </div>
                     )}
+                    {error && (
+                      <p className="text-red-400 text-xs font-semibold">
+                        {error}
+                      </p>
+                    )}
 
                     <button
-                      onClick={handleSubmit}
-                      className="bg-accent text-white font-bold py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm tracking-wide cursor-pointer"
+                      type="submit"
+                      disabled={
+                        isSubmitting ||
+                        !form.firstName.trim() ||
+                        !form.phone.trim()
+                      }
+                      className="bg-accent text-white font-bold py-4 rounded-lg hover:bg-yellow-500 transition-colors text-sm tracking-wide cursor-pointer disabled:opacity-50"
                     >
-                      Send Enquiry
+                      {isSubmitting ? "Sending..." : "Send Enquiry"}
                     </button>
 
                     <p className="text-white/40 text-xs text-center">
                       * Required fields
                     </p>
-                  </div>
+                  </form>
                 </>
               )}
             </div>

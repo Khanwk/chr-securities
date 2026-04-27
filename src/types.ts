@@ -120,3 +120,28 @@ export interface QuickChip {
     label: string;
     message: string;
 }
+export interface QuoteForm {
+    name: string;
+    phone: string;
+    service: string;
+    message: string;
+    email: string
+}
+export interface CyberForm {
+    businessName: string;
+    name: string;
+    email: string;
+    phone: string;
+}
+export interface ApiPayload {
+    name: string;
+    phone: string;
+    platform: string;
+    action: string;
+    service?: string;
+    description?: string;
+    company?: string;
+    email?: string;
+    propertyType?: string;
+    timeline?: string;
+}

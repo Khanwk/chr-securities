@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 
 import { credentials, products, approvedSuppliers } from "../data";
 import type { Credential, Product } from "../types";
+import Image from "next/image";
 
 export default function WhyCHR() {
   const router = useRouter();
@@ -12,12 +13,16 @@ export default function WhyCHR() {
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div className="relative flex flex-col gap-4">
-            <img
+            <Image
+              fill
+              priority
               src="https://images.pexels.com/photos/8293778/pexels-photo-8293778.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="CHR Securities installation"
               className="rounded-2xl w-full h-64 object-cover"
             />
-            <img
+            <Image
+              fill
+              priority
               src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="Security engineer at work"
               className="rounded-2xl w-full h-48 object-cover"

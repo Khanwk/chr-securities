@@ -16,6 +16,7 @@ import type {
 import QuoteModal from "./modals/QouteModal";
 import CyberScoreModal from "./modals/CyberScoreModal";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Cyber() {
   const [cyberModalOpen, setCyberModalOpen] = useState(false);
@@ -32,7 +33,9 @@ export default function Cyber() {
     <>
       <section className="relative bg-primary py-24 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
+            fill
+            priority
             src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80"
             alt="Cyber security"
             className="w-full h-full object-cover opacity-15 animate-slow-zoom"
