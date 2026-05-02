@@ -94,14 +94,14 @@ export const botRules: BotRule[] = [
             "We install Hikvision HD and IP CCTV systems — 4 to 64 cameras depending on your site. Free app included so you can view live footage from anywhere. 24hr monitoring available via Resure. Would you like a free site assessment?",
     },
     {
-        keywords: ["intruder", "alarm", "hkc", "burglar", "wireless", "wired"],
+        keywords: ["intruder", "hkc", "burglar", "wireless", "wired"],
         response:
             "We supply and fit wired and wireless HKC alarm systems. Smart app control, 4G GSM and Wi-Fi backup, and rapid Garda response via our monitoring centre. We cover homes, businesses and industrial sites. Want a free quote?",
     },
     {
         keywords: ["fire", "smoke", "detector"],
         response:
-            "We install and maintain fully certified fire alarm systems — smoke and heat detectors, audible and visual alerts, automatic fire brigade notification. Quarterly maintenance contracts available. Compliant with Irish Fire Safety Regulations.",
+            "We install and maintain two types of fully certified fire alarm systems:\n\n• Conventional Fire Alarm Systems — cost-effective zone-based detection ideal for smaller premises.\n\n• Addressable Fire Alarm Systems — advanced systems that pinpoint the exact device triggered, ideal for larger or more complex buildings.\n\nAll systems include smoke and heat detectors, audible and visual alerts, and automatic fire brigade notification. Quarterly maintenance contracts available. Compliant with Irish Fire Safety Regulations.",
     },
     {
         keywords: ["access", "intercom", "door entry"],
@@ -138,15 +138,21 @@ export const botRules: BotRule[] = [
         response:
             "Ciaran holds a full PSA licence from Ireland's Private Security Authority — mandatory for alarm and CCTV installation. All personnel are Garda-vetted and trained to the required standard.",
     },
+    // ── Sureguard keyword ───────────────────────────────────────────────────────
+    {
+        keywords: ["sureguard"],
+        response:
+            "Sureguard is CHR Securities' 24hr professional monitoring service. It covers CCTV, intruder alarms and fire alarms with rapid Garda response coordination and automatic fire brigade notification. Want to find out more or get a quote?",
+    },
 ];
 
 export const quickChips: QuickChip[] = [
     { label: "CCTV pricing?", message: "cctv pricing" },
-    { label: "Intruder alarms?", message: "intruder alarm" },
+    { label: "Intruder alarms?", message: "intruder alarm" },  // ← was missing, now explicit
     { label: "Fire alarms?", message: "fire alarm" },
     { label: "Book a slot", message: "book appointment" },
     { label: "Maintenance?", message: "maintenance contract" },
-    { label: "Access control?", message: "access control" },
+    { label: "PSA licence?", message: "psa licence" },
 ];
 
 export const serviceDetails: ServiceDetail[] = [

@@ -2,10 +2,9 @@
 
 @theme {
   --color-primary: #0d2d5e;
-  --color-accent: #f59e0b;
+  --color-accent: #4a90c4;
   --color-sky: #ebf4ff;
   --color-textMain: #333333;
-
   --breakpoint-nav: 960px;
   --breakpoint-tablet: 900px;
   --breakpoint-hero: 700px;
