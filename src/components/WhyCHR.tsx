@@ -13,26 +13,33 @@ export default function WhyCHR() {
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div className="relative flex flex-col gap-4">
-            <Image
-              fill
-              priority
-              src="https://images.pexels.com/photos/8293778/pexels-photo-8293778.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="CHR Securities installation"
-              className="rounded-2xl w-full h-64 object-cover"
-            />
-            <Image
-              fill
-              priority
-              src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="Security engineer at work"
-              className="rounded-2xl w-full h-48 object-cover"
-            />
-            <div className="absolute bottom-6 left-6 bg-accent text-white rounded-xl px-6 py-4 shadow-lg">
+            {/* Wrapper divs give fill images a sized, positioned container */}
+            <div className="relative w-full h-64 rounded-2xl overflow-hidden">
+              <Image
+                fill
+                priority
+                src="https://images.pexels.com/photos/8293778/pexels-photo-8293778.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="CHR Securities installation"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="relative w-full h-48 rounded-2xl overflow-hidden">
+              <Image
+                fill
+                priority
+                src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Security engineer at work"
+                className="object-cover"
+              />
+            </div>
+
+            {/* Badge anchors to the outer relative div, positioned over the bottom image */}
+            <div className="absolute bottom-6 left-6 bg-accent text-white rounded-xl px-6 py-4 shadow-lg z-10">
               <p className="text-3xl font-black">25+</p>
               <p className="text-sm font-semibold">Years Experience</p>
             </div>
           </div>
-
           <div>
             <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-2">
               About CHR Securities
