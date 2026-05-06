@@ -138,11 +138,11 @@ export const botRules: BotRule[] = [
         response:
             "Ciaran holds a full PSA licence from Ireland's Private Security Authority — mandatory for alarm and CCTV installation. All personnel are Garda-vetted and trained to the required standard.",
     },
-    // ── Sure Guard keyword ───────────────────────────────────────────────────────
+    // ── Sureguard keyword ───────────────────────────────────────────────────────
     {
-        keywords: ["sure guard"],
+        keywords: ["sureguard"],
         response:
-            "Sure Guard is CHR Securities' 24hr professional monitoring service. It covers CCTV, intruder alarms and fire alarms with rapid Garda response coordination and automatic fire brigade notification. Want to find out more or get a quote?",
+            "Sureguard is CHR Securities' 24hr professional monitoring service. It covers CCTV, intruder alarms and fire alarms with rapid Garda response coordination and automatic fire brigade notification. Want to find out more or get a quote?",
     },
 ];
 
