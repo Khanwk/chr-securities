@@ -86,7 +86,7 @@ export default function Navbar({ setPage, activePage }: Props) {
 
       <div className="bg-accent text-primary text-xs font-semibold text-center py-1.5 px-4 tracking-wide">
         PSA Licensed &nbsp;|&nbsp; Arachas Insured &nbsp;|&nbsp; CCTV · Alarms ·
-        Fire · Access Control &nbsp;|&nbsp; Former Lead Engineer — Sure Guard
+        Fire · Access Control &nbsp;|&nbsp; Former Lead Engineer — Sureguard
         Securities &nbsp;|&nbsp; Now Offering Cyber Security
       </div>
 
