@@ -49,7 +49,7 @@ export default function WhyCHR() {
             </h2>
             <p className="text-textMain text-base leading-relaxed mb-8">
               Ciaran Keane founded CHR Securities after 25 years as Lead
-              Engineer at Sure Guard Securities. When he arrives at your
+              Engineer at Sureguard Securities. When he arrives at your
               property, you deal directly with the engineer — not a
               subcontractor or call centre. Hundreds of installations. One name
               behind every job.
